@@ -3,12 +3,13 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "vite dev --port 3000",
-    "build": "vite build",
-    "preview": "vite preview",
-    "deploy": "npm run build && wrangler deploy",
-    "cf-typegen": "wrangler types"
-  },
+  "dev": "vite dev --port 3000",
+  "build": "vite build",
+  "build:cloudflare": "vite build --config vite.config.cloudflare.ts",
+  "preview": "vite preview",
+  "deploy": "npm run build:cloudflare && wrangler deploy",
+  "cf-typegen": "wrangler types"
+ },
   "dependencies": {
     "@supabase/supabase-js": "^2.45.4",
     "@tailwindcss/vite": "^4.2.2",
